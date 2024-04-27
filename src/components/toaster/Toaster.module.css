@@ -19,6 +19,7 @@
   text-align: left;
   cursor: pointer;
   min-height: 40px;
+  animation: slide-in 0.4s ease-in-out forwards;
 }
 
 .toast:after {
@@ -43,11 +44,37 @@
   background-color: #ff4238;
 }
 
+.toastDismissed {
+  animation: slide-out 0.4s ease-in-out forwards;
+}
+
 @keyframes progressBar {
   0% {
     width: 100%;
   }
   100% {
     width: 0%;
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
   }
 }
